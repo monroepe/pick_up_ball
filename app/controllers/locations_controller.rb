@@ -37,7 +37,11 @@ class LocationsController < ApplicationController
   end
 
   def destroy
+    @location = Location.find(params[:id])
 
+    @location.destroy
+
+    redirect_to locations_path, notice: "Court destroyed successfully!"
   end
 
   private

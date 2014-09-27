@@ -4,6 +4,10 @@
 
 <p><%= @location.description %></p>
 
-<p><%= link_to "Edit Court", edit_location_path(@location) %>
+<p>
+<%= link_to "Edit Court", edit_location_path(@location) %>
+<%= link_to "Delete Court", location_path(@location),
+  method: :delete, data: { confirm: "Are your sure?" } %>
+</p>
 
 <p><%= link_to "Back", locations_path %></p>
