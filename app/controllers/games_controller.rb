@@ -10,6 +10,7 @@ def show
 end
 
 def new
+  @location = Location.find(params[:location_id])
   @game = Game.new
 end
 
@@ -41,7 +42,7 @@ end
 
 private
 def game_params
-  params.requie(:games).permit(:game_name, :time, :date, :description)
+  params.require(:game).permit(:game_name, :time, :date, :description)
 end
 
 end

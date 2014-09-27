@@ -8,10 +8,10 @@ Rails.application.routes.draw do
 
 
   resources :locations do
-  resources :games
+    resources :games
   end
 
-  resources :games
+
 
 
   # Example of regular route:
