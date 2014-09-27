@@ -9,11 +9,17 @@ class LocationsController < ApplicationController
   end
 
   def new
-
+    @location = Location.new
   end
 
   def create
+    @location = current_user.locations.build(location_params)
 
+    if @location.save
+      redirect_to @location, notice: "Court created successfully!"
+    else
+      render "new"
+    end
   end
 
   def edit
