@@ -26,9 +26,15 @@ def create
   end
 end
 
+def edit
+  @location = Location.find(params[:location_id])
+  @game = @location.games.find(params[:id])
+end
+
 def update
   @location = Location.find(params[:location_id])
   @game = @location.games.find(params[:id])
+
     if @game.update(game_params)
       redirect_to @location, notice: "Game updated successfully"
     else
@@ -37,7 +43,12 @@ def update
 end
 
 def destroy
+  @location = Location.find(params[:location_id])
+  @game = @location.games.find(params[:id])
 
+  @game.destroy
+
+  redirect_to location_path(@location), notice: "Game destroyed successfully!"
 end
 
 private
