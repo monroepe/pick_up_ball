@@ -3,24 +3,35 @@
 <p><strong>Location: </strong><%= @location.address %> <%= @location.city %>, <%= @location.state %> <%= @location.zip_code %></p>
 
 <p><strong> Description: </strong><%= @location.description %><br>
-<%= link_to "Edit Court", edit_location_path(@location) %> |
-<%= link_to "Delete Court", location_path(@location),
+
+<% if current_user == @location.user %>
+  <%= link_to "Edit Court", edit_location_path(@location) %> |
+  <%= link_to "Delete Court", location_path(@location),
   method: :delete, data: { confirm: "Are your sure?" } %>
-  </p>
+<% end %>
+</p>
+
 <br>
-<br>
+
 <h3> Games </h3>
+
 <% @location.games.each do |game| %>
 <p>
-Game: <%= game.game_name %> <br>
+<%= link_to "Game: #{game.game_name}", location_game_path(@location, game) %> <br>
 Time: <%= game.time %> <br>
 Date: <%= game.date %> <br>
 Additional Information: <%= game.description %> <br>
-<%= link_to "Edit", edit_location_game_path(@location, game) %> |
-<%= link_to "Delete", location_game_path(@location, game),
+
+<% if current_user == game.user %>
+  <%= link_to "Edit", edit_location_game_path(@location, game) %> |
+  <%= link_to "Delete", location_game_path(@location, game),
       method: :delete, data: { confirm: "Are your sure?" } %>
+<% end %>
 </p>
 <% end %>
-<%= link_to "Add a Game", new_location_game_path(@location) %>
+
+<% if current_user %>
+  <%= link_to "Add a Game", new_location_game_path(@location) %>
+<% end %>
 
 <p><%= link_to "Back", locations_path %></p>
