@@ -43,7 +43,12 @@ def update
 end
 
 def destroy
+  @location = Location.find(params[:location_id])
+  @game = @location.games.find(params[:id])
 
+  @game.destroy
+
+  redirect_to location_path(@location), notice: "Game destroyed successfully!"
 end
 
 private
