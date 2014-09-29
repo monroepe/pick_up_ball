@@ -1,2 +1,18 @@
 <h2><%= @game.game_name %> </h2>
 
+<h5>Where: <%= @game.location.name %></h5>
+
+<h5>When: <%= @game.time %>, <%= @game.date %></h5>
+
+<p><%= @game.description %></p>
+
+<h3>Discussion</h3>
+
+<ul>
+<% @comments.each do |comment| %>
+  <li><%= comment.body %></li>
+<% end %>
+</ul>
+
+
+<%= link_to "Discuss", new_game_comment_path(@game) %>
