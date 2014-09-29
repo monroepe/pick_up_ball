@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :games
   end
 
-  resources :games do
+  resources :games, only: [] do
     resources :comments, only: [:new, :create, :edit, :update, :destroy]
   end
 
