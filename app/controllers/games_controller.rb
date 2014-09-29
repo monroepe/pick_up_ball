@@ -7,6 +7,7 @@ end
 
 def show
   @game = Game.find(params[:id])
+  @comments = @game.comments.order("created_at")
 end
 
 def new
@@ -19,6 +20,7 @@ def create
   @location = Location.find(params[:location_id])
   @game = @location.games.build(game_params)
   @game.user = current_user
+
   if @game.save
     redirect_to @location, notice: "Game created successfully!"
   else

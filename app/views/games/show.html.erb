@@ -1,2 +1,25 @@
 <h2><%= @game.game_name %> </h2>
 
+<h5>Where: <%= @game.location.name %></h5>
+
+<h5>When: <%= @game.time %>, <%= @game.date %></h5>
+
+<p><%= @game.description %></p>
+
+<h3>Discussion</h3>
+
+<ul>
+<% @comments.each do |comment| %>
+  <li>
+  <%= comment.body %><br />
+  <% if current_user = comment.user %>
+    <%= link_to "Edit", edit_game_comment_path(@game, comment) %> |
+    <%= link_to "Delete", game_comment_path(@game, comment),
+        method: :delete, data: { confirm: "Are your sure?" } %>
+  <% end %>
+  </li>
+<% end %>
+</ul>
+
+
+<%= link_to "Discuss", new_game_comment_path(@game) %>
