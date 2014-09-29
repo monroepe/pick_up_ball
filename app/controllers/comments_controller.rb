@@ -19,16 +19,28 @@ before_action :authenticate_user!
   end
 
   def edit
-    @game = Game.find(params[:id])
+    @game = Game.find(params[:game_id])
     @comment = Comment.find(params[:id])
   end
 
   def update
+    @game = Game.find(params[:game_id])
+    @comment = Comment.find(params[:id])
 
+    if @comment.update(comment_params)
+      redirect_to @game, notice: "Comment updated"
+    else
+      render "edit"
+    end
   end
 
   def destroy
+    @game = Game.find(params[:game_id])
+    @comment = Comment.find(params[:id])
 
+    @comment.destroy
+
+    redirect_to @game, notice: "Comment deleted"
   end
 
   private

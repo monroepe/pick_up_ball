@@ -10,7 +10,14 @@
 
 <ul>
 <% @comments.each do |comment| %>
-  <li><%= comment.body %></li>
+  <li>
+  <%= comment.body %><br />
+  <% if current_user = comment.user %>
+    <%= link_to "Edit", edit_game_comment_path(@game, comment) %> |
+    <%= link_to "Delete", game_comment_path(@game, comment),
+        method: :delete, data: { confirm: "Are your sure?" } %>
+  <% end %>
+  </li>
 <% end %>
 </ul>
 
