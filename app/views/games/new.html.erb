@@ -1,3 +1,5 @@
 <h1> Create a Game </h1>
 
 <%= render 'games/form', location: @location, game: @game %>
+
+<%= link_to "Back", location_path(@location) %>

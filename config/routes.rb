@@ -5,11 +5,15 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :locations do
-    resources :games
+    resources :games, only: [:show, :new, :create, :edit, :update, :destroy]
   end
 
-  resources :games do
+  resources :games, only: [] do
     resources :comments, only: [:new, :create, :edit, :update, :destroy]
+  end
+
+  resources :users, only: [] do
+    resources :games, only: [:index]
   end
 
 end
