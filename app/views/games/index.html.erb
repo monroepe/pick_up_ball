@@ -1,1 +1,7 @@
-<h1> All Da Gamez </h1>
+<h1>My Games</h1>
+
+<ul>
+  <% @games.each do |game| %>
+    <li><%= link_to game.game_name, location_game_path(game.location, game) %></li>
+  <% end %>
+</ul>

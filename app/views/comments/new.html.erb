@@ -2,4 +2,4 @@
 
 <%= render 'comments/form', game: @game, comment: @comment %>
 
-<%= link_to "Back", @game %>
+<%= link_to "Back", location_game_path(@game.location, @game) %>
