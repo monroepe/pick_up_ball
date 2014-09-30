@@ -11,7 +11,7 @@
 <ul>
 <% @comments.each do |comment| %>
   <li>
-  <%= comment.body %> --<%= comment.user.email %>
+  <%= comment.body %> --<%= comment.user.username %>
   <br />
   <% if current_user = comment.user %>
     <%= link_to "Edit", edit_game_comment_path(@game, comment) %> |
