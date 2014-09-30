@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :games, only: [] do
     resources :comments, only: [:new, :create, :edit, :update, :destroy]
+    resources :players, only: [:new, :create, :edit, :update, :destroy]
   end
 
   resources :users, only: [] do
