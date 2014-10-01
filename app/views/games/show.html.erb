@@ -35,3 +35,11 @@
 </ul>
 
 <p><%= link_to "Discuss", new_game_comment_path(@game) %></p>
+
+<p>
+<% if current_user == @game.user %>
+  <%= link_to "Edit Game", edit_location_game_path(@game.location, @game) %> |
+  <%= link_to "Delete Game", location_game_path(@game.location, @game),
+      method: :delete, data: { confirm: "Are your sure?" } %>
+<% end %>
+</p>

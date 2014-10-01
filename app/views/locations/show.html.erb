@@ -26,8 +26,8 @@ Additional Information: <%= game.description %> <br>
   <%= link_to "Edit", edit_location_game_path(@location, game) %> |
   <%= link_to "Delete", location_game_path(@location, game),
       method: :delete, data: { confirm: "Are your sure?" } %> |
-  <%= link_to "Discussion", location_game_path(@location, game) %>
 <% end %>
+  <%= link_to "Discussion", location_game_path(@location, game) %>
 </p>
 <% end %>
 
