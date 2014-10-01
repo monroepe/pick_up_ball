@@ -2,7 +2,7 @@
 
 <h5>Where: <%= @game.location.name %></h5>
 
-<h5>When: <%= @game.time %>, <%= @game.date %></h5>
+<h5>When: <%= @game.time.strftime("%I:%M%p") %>, <%= @game.date.strftime("%m/%d/%Y") %></h5>
 
 <p><%= @game.description %></p>
 

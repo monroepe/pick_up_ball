@@ -18,8 +18,8 @@
 <% @location.games.each do |game| %>
 <p>
 Game: <%= game.game_name %> <br>
-Time: <%= game.time %> <br>
-Date: <%= game.date %> <br>
+Time: <%= game.time.strftime("%I:%M%p") %> <br>
+Date: <%= game.date.strftime("%m/%d/%Y") %> <br>
 Additional Information: <%= game.description %> <br>
 
 <% if current_user == game.user %>
