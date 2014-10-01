@@ -23,6 +23,7 @@ def create
   @game.user = current_user
 
   if @game.save
+    @game.players.create(user_id: current_user.id)
     redirect_to @location, notice: "Game created successfully!"
   else
     render "game/new"
