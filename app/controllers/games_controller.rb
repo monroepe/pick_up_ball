@@ -7,6 +7,7 @@ end
 
 def show
   @game = Game.find(params[:id])
+  @players = @game.players
   @comments = @game.comments.order("created_at")
 end
 
