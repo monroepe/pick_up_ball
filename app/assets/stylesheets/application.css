@@ -4,13 +4,12 @@
 @import "foundation_and_overrides";
 
 body  {
-  background-image: url('basketball-court.jpg');
+  background: url('basketball-court.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-
 h1, p, label, a {
   color: white;
 }
