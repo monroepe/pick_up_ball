@@ -1,8 +1,7 @@
-<h1><%= @location.name %></h1>
+<h1><%= @location.park_name %></h1>
 
-<p><strong>Location: </strong><%= @location.address %> <%= @location.city %>, <%= @location.state %> <%= @location.zip_code %></p>
+<p><strong>Location: </strong><%= @location.address %>
 
-<p><strong> Description: </strong><%= @location.description %><br>
 
 <% if current_user == @location.user %>
   <%= link_to "Edit Court", edit_location_path(@location) %> |
