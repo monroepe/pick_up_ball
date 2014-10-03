@@ -1,1 +1,9 @@
 @import "foundation_and_overrides";
+
+body  {
+  background-image: url('basketball-court.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
