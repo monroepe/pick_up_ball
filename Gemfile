@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'spring',        group: :development
 gem 'foundation-rails', '5.4.3.1'
 gem 'devise'
+gem 'pickadate-rails'
 
 group :development, :test do
   gem 'capybara'

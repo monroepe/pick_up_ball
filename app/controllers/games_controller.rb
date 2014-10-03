@@ -7,6 +7,7 @@ end
 
 def show
   @game = Game.find(params[:id])
+  @players = @game.players
   @comments = @game.comments.order("created_at")
 end
 
@@ -22,6 +23,7 @@ def create
   @game.user = current_user
 
   if @game.save
+    @game.players.create(user_id: current_user.id)
     redirect_to @location, notice: "Game created successfully!"
   else
     render "game/new"

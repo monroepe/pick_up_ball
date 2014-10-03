@@ -3,4 +3,14 @@ class Location < ActiveRecord::Base
   has_many :games, dependent: :destroy
 
   validates :address, :park_name, presence: true
+
+
+  def self.search(search)
+    if search
+      where("name ILIKE?", "%#{search}%")
+    else
+      all
+    end
+  end
+
 end

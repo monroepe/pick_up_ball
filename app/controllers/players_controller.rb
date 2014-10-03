@@ -23,7 +23,7 @@ before_action :authenticate_user!
 
     @player.destroy
 
-    redirect_to location_game_path(@game.location, @game), notice: "Court destroyed successfully!"
+    redirect_to location_game_path(@game.location, @game), notice: "Left game"
   end
 
 end

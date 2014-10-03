@@ -2,9 +2,21 @@
 
 <h5>Where: <%= @game.location.name %></h5>
 
-<h5>When: <%= @game.time %>, <%= @game.date %></h5>
+<h5>When: <%= @game.time.strftime("%I:%M%p") %>, <%= @game.date.strftime("%m/%d/%Y") %></h5>
 
 <p><%= @game.description %></p>
+
+<h3>Players</h3>
+
+<ul>
+<% @players.each do |player| %>
+  <li><%= player.user.username %></li>
+<% end %>
+</ul>
+
+<% if !@game.users.include?(current_user) %>
+  <p><%= button_to "Join", game_players_path(@game) %></p>
+<% end %>
 
 <h3>Discussion</h3>
 
@@ -22,6 +34,12 @@
 <% end %>
 </ul>
 
-<p><%= button_to "Join", "#" %></p>
-
 <p><%= link_to "Discuss", new_game_comment_path(@game) %></p>
+
+<p>
+<% if current_user == @game.user %>
+  <%= link_to "Edit Game", edit_location_game_path(@game.location, @game) %> |
+  <%= link_to "Delete Game", location_game_path(@game.location, @game),
+      method: :delete, data: { confirm: "Are your sure?" } %>
+<% end %>
+</p>
