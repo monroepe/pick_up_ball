@@ -15,6 +15,6 @@
 /log/*.log
 /tmp
 
-* Ignore .env file
+*Ignore .env file
 /.env
 
