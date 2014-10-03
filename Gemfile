@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'spring',        group: :development
 gem 'foundation-rails', '5.4.3.1'
 gem 'devise'
-gem "combined_time_select", "~> 1.0.1"
+gem 'pickadate-rails'
 
 group :development, :test do
   gem 'capybara'

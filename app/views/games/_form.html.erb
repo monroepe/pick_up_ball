@@ -15,16 +15,7 @@
   </p>
   <p>
   <%= f.label :time %>
-  <%= f.time_select :time,
-  :combined => true,
-  :default => Time.now.change(:hour => 11, :min => 30),
-  :minute_interval => 15,
-  :time_separator => "",
-  :start_hour => 6,
-  :start_minute => 30,
-  :end_hour => 22,
-  :end_minute => 30
-%>
+  <%= f.text_field :time%>
   <br>
   <%= f.label :date %>
   <%= f.text_area :date %>
