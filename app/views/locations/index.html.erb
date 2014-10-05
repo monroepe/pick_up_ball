@@ -1,9 +1,9 @@
 <h1>Courts</h1>
 
-<ol>
+<ul>
 <% @locations.each do |location| %>
   <li><%= link_to location.park_name, location_path(location) %></li>
 <% end %>
-</ol>
+</ul>
 
 <%= link_to "New Court", new_location_path %>
