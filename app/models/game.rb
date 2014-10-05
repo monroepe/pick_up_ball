@@ -5,5 +5,5 @@ class Game < ActiveRecord::Base
   has_many :players, dependent: :destroy
   has_many :users, through: :players
 
-  validates :game_name, :time, :date, :description, :location_id, presence: true
+  validates :name, :time, :date, :description, :location_id, presence: true
 end

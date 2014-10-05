@@ -2,12 +2,9 @@ class CreateLocations < ActiveRecord::Migration
   def change
     create_table :locations do |t|
       t.string :name, null: false
-      t.text :description
-      t.integer :user_id, null: false
+      t.integer :user_id
       t.string :address, null: false
-      t.string :city, null: false
-      t.string :state, null: false
-      t.integer :zip_code, null: false
+      t.text :description
 
       t.timestamps
     end

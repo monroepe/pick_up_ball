@@ -10,6 +10,6 @@ require 'rest_client'
 results = RestClient.get("kimonolabs.com/api/a7bz61mi?apikey=#{ENV['KIMONO_API_KEY']}")
 courts = JSON.parse(results)
 courts["results"]["collection1"].each do |row|
-  locations = Location.create(address: row["addressofBronxPark"]["text"], park_name: row["nameofBronxPark"])
+  locations = Location.create(address: row["addressofBronxPark"]["text"], name: row["nameofBronxPark"])
 end
 
