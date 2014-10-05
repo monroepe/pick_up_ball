@@ -1,7 +1,6 @@
-<h1><%= @location.park_name %></h1>
+<h1><%= @location.name %></h1>
 
 <p><strong>Location: </strong><%= @location.address %>
-
 
 <% if current_user == @location.user %>
   <%= link_to "Edit Court", edit_location_path(@location) %> |
@@ -10,13 +9,18 @@
 <% end %>
 </p>
 
-<br>
+<h3>Description</h3>
+<p><%= @location.description %></p>
 
-<h3> Games </h3>
+<% if !@location.description %>
+  <%= link_to "Add a description", edit_location_path(@location) %>
+<% end %>
+
+<h3>Games</h3>
 
 <% @location.games.each do |game| %>
 <p>
-Game: <%= game.game_name %> <br>
+Game: <%= game.name %> <br>
 Time: <%= game.time.strftime("%I:%M%p") %> <br>
 Date: <%= game.date.strftime("%m/%d/%Y") %> <br>
 Additional Information: <%= game.description %> <br>

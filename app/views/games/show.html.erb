@@ -1,4 +1,4 @@
-<h2><%= @game.game_name %> </h2>
+<h2><%= @game.name %> </h2>
 
 <h5>Where: <%= @game.location.name %></h5>
 
@@ -43,3 +43,5 @@
       method: :delete, data: { confirm: "Are your sure?" } %>
 <% end %>
 </p>
+
+<p><%= link_to "Back", :back %></p>

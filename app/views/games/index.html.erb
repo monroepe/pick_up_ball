@@ -2,6 +2,8 @@
 
 <ul>
   <% @games.each do |game| %>
-    <li><%= link_to game.game_name, location_game_path(game.location, game) %></li>
+    <li><%= link_to game.name, location_game_path(game.location, game) %></li>
   <% end %>
 </ul>
+
+<p><%= link_to "Back", :back %></p>
