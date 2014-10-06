@@ -6,4 +6,6 @@
 <% end %>
 </ul>
 
+<%= paginate @locations, window: 2 %>
+
 <p><%= link_to "New Court", new_location_path %></p>

@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @locations = Location.search(params[:search]).order(:name)
+    @locations = Location.search(params[:search]).order(:name).page(params[:page])
   end
 
   def show
