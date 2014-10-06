@@ -10,7 +10,7 @@
     </div>
   <% end %>
 
-<% if current_user == location.user %>
+<% if (current_user == location.user) || (!location.name &&                                        !location.address) %>
   <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
