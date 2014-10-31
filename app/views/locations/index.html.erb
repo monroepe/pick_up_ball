@@ -2,7 +2,7 @@
 
 <ul>
 <% @locations.each do |location| %>
-  <li><%= link_to location.name, location_path(location) %></li>
+  <li><%= link_to location.name, location_path(location) %> (<%= location.city %>, <%= location.state %>)</li>
 <% end %>
 </ul>
 
