@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-require 'csv'
-
-locations = CSV.foreach("db/locations.csv") do |row|
-  Location.create(name: row[0], address: row[1], city: row[2], state: row[3])
+Hash.from_xml(File.read("nyc-courts.xml"))["basketball"]["facility"].inject({}) do |_result, elem|
+  Location.create(name: elem["Name"], address: elem["Location"], city: "New York", state: "NY")
 end

@@ -1,6 +1,6 @@
 <h1><%= @location.name %></h1>
 
-<p><strong>Location: </strong><%= @location.address %>
+<p><strong>Location: </strong><%= @location.address %> <%= @location.city %>, <%= @location.state %>
 
 <% if current_user == @location.user %>
   <%= link_to "Edit Court", edit_location_path(@location) %> |
