@@ -15,7 +15,7 @@
 </ul>
 
 <% if !@game.users.include?(current_user) %>
-  <p><%= button_to "Join", game_players_path(@game) %></p>
+  <p><%= button_to "Join", game_players_path(@game), class:"submit-button" %></p>
 <% end %>
 
 <h3>Discussion</h3>
