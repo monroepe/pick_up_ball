@@ -48,7 +48,7 @@ before_action :authenticate_user!, except: [:index, :show]
   private
 
   def location_params
-    params.require(:location).permit(:name, :description, :address, :city, :state, :zip_code)
+    params.require(:location).permit(:name, :description, :address, :city, :state)
   end
 
 end
