@@ -5,11 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-require 'rest_client'
+require 'csv'
 
-results = RestClient.get("kimonolabs.com/api/a7bz61mi?apikey=#{ENV['KIMONO_API_KEY']}")
-courts = JSON.parse(results)
-courts["results"]["collection1"].each do |row|
-  locations = Location.create(address: row["addressofBronxPark"]["text"], name: row["nameofBronxPark"])
+locations = CSV.foreach("db/locations.csv") do |row|
+  Location.create(name: row[0], address: row[1], city: row[2], state: row[3])
 end
-

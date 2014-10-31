@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20141031183335) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "city"
-    t.string   "state"
+    t.string   "city",        null: false
+    t.string   "state",       null: false
   end
 
   create_table "players", force: true do |t|
