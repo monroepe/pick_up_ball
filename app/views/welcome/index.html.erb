@@ -1,3 +1,13 @@
 <h1> Welcome to PickUp Ball</h1>
 
+<h3>Recent Games</h3>
+
+<% @games.each do |game| %>
+<p class="front-page">
+What: <%= link_to game.name, location_game_path(game.location, game) %>
+When: <%= game.time.strftime("%I:%M%p") %> <%= game.date.strftime("%m/%d/%Y") %>
+Where: <%= game.location.address %> (<%= game.location.city %>, <%= game.location.state %>)
+</p>
+<% end %>
+
 
