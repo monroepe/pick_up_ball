@@ -17,15 +17,17 @@ gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
 gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 gem "bullet", group: :development
 gem 'quiet_assets', group: :development
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'capybara'
   gem 'poltergeist'
-  gem 'dotenv-rails'
   gem 'launchy'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
 
-
+group :test do
+  gem 'coveralls', require: false
+end
