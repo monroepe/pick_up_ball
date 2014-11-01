@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @games = Game.all.includes(:location)
+    @games = Game.includes(:location).last(10).reverse
   end
 end
