@@ -112,6 +112,17 @@ body a, h3 {
   top:1px;
 }
 
-h5 {
+h5, .front-page {
   font-weight: bold;
 }
+
+.front-page > a {
+  color: #ffffff;
+  font-size: 1.4em;
+  margin-right: 5px;
+}
+
+.front-page > a:hover {
+  color: red;
+}
+
