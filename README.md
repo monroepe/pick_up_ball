@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/monroepe/pick_up_ball/badges/gpa.svg)](https://codeclimate.com/github/monroepe/pick_up_ball)
+[![Code Climate](https://codeclimate.com/github/monroepe/pick_up_ball/badges/gpa.svg)](https://codeclimate.com/github/monroepe/pick_up_ball)[![Coverage Status](https://coveralls.io/repos/monroepe/pick_up_ball/badge.png?branch=master)](https://coveralls.io/r/monroepe/pick_up_ball?branch=master)
 
 #PickUp Ball
 
