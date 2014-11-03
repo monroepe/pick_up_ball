@@ -31,9 +31,9 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
 
     if @location.update(location_params)
-      redirect_to @location
+      redirect_to @location, notice: "Court updated successfully!"
     else
-      render "edit", notice: "Court updated successfully!"
+      render "edit"
     end
   end
 
@@ -42,7 +42,7 @@ class LocationsController < ApplicationController
 
     @location.destroy
 
-    redirect_to locations_path, notice: "Court destroyed successfully!"
+    redirect_to locations_path, notice: "Court deleted successfully!"
   end
 
   private
