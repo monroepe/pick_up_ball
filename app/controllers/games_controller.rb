@@ -26,7 +26,7 @@ class GamesController < ApplicationController
       @game.players.create(user_id: current_user.id)
       redirect_to @location, notice: "Game created successfully!"
     else
-      render "game/new"
+      render "games/new"
     end
   end
 
@@ -40,9 +40,9 @@ class GamesController < ApplicationController
     @game = @location.games.find(params[:id])
 
       if @game.update(game_params)
-        redirect_to @location, notice: "Game updated successfully"
+        redirect_to @location, notice: "Game updated successfully!"
       else
-        render "game/edit"
+        render "games/edit"
       end
   end
 
@@ -52,7 +52,7 @@ class GamesController < ApplicationController
 
     @game.destroy
 
-    redirect_to location_path(@location), notice: "Game destroyed successfully!"
+    redirect_to location_path(@location), notice: "Game deleted successfully!"
   end
 
   private
