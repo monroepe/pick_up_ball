@@ -12,7 +12,7 @@ before_action :authenticate_user!
     @comment.user = current_user
 
     if @comment.save
-      redirect_to location_game_path(@game.location, @game), notice: "Comment created successfully"
+      redirect_to location_game_path(@game.location, @game), notice: "Comment created successfully!"
     else
       render "new"
     end
@@ -28,7 +28,7 @@ before_action :authenticate_user!
     @comment = Comment.find(params[:id])
 
     if @comment.update(comment_params)
-      redirect_to location_game_path(@game.location, @game), notice: "Comment updated"
+      redirect_to location_game_path(@game.location, @game), notice: "Comment updated successfully!"
     else
       render "edit"
     end
@@ -40,7 +40,7 @@ before_action :authenticate_user!
 
     @comment.destroy
 
-    redirect_to location_game_path(@game.location, @game), notice: "Comment deleted"
+    redirect_to location_game_path(@game.location, @game), notice: "Comment deleted successfully!"
   end
 
   private
