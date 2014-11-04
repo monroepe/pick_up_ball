@@ -6,6 +6,14 @@
 
 <p><%= @game.description %></p>
 
+<p>
+<% if current_user == @game.user %>
+  <%= link_to "Edit Game", edit_location_game_path(@game.location, @game) %> |
+  <%= link_to "Delete Game", location_game_path(@game.location, @game),
+      method: :delete, data: { confirm: "Are your sure?" } %>
+<% end %>
+</p>
+
 <h3>Players</h3>
 
 <ul>
@@ -26,8 +34,8 @@
 <% @comments.each do |comment| %>
   <li>
   <%= comment.body %> --<%= comment.user.username %>
-  <br />
-  <% if current_user = comment.user %>
+
+  <% if current_user == comment.user %>
     <%= link_to "Edit", edit_game_comment_path(@game, comment) %> |
     <%= link_to "Delete", game_comment_path(@game, comment),
         method: :delete, data: { confirm: "Are your sure?" } %>
@@ -37,13 +45,5 @@
 </ul>
 
 <p><%= link_to "Discuss", new_game_comment_path(@game) %></p>
-
-<p>
-<% if current_user == @game.user %>
-  <%= link_to "Edit Game", edit_location_game_path(@game.location, @game) %> |
-  <%= link_to "Delete Game", location_game_path(@game.location, @game),
-      method: :delete, data: { confirm: "Are your sure?" } %>
-<% end %>
-</p>
 
 <p><%= link_to "Back", location_path(@game.location) %></p>
