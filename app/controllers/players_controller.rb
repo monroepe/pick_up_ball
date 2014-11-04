@@ -19,7 +19,7 @@ before_action :authenticate_user!
 
   def destroy
     @game = Game.find(params[:game_id])
-    @player = current_user.games.where(game_id: params[:game_id])
+    @player = @game.players.find(params[:id])
 
     @player.destroy
 
