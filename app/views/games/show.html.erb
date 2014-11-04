@@ -14,10 +14,10 @@
 <% end %>
 </ul>
 
-<% if @game.players.where(user_id: current_user.id) == [] %>
+<% if !current_user || @players.where(user_id: current_user.id) == [] %>
   <p><%= button_to "Join", game_players_path(@game), class:"submit-button" %></p>
-<% else @game.players.where(user_id: current_user.id) %>
-  <p><%= button_to "Leave Game", game_player_path(@game, @game.players.where(user_id: current_user.id).first.id), method: :delete, data: { confirm: "Are your sure?" }, class:"submit-button" %></p>
+<% else %>
+  <p><%= button_to "Leave Game", game_player_path(@game, @players.where(user_id: current_user.id).first.id), method: :delete, data: { confirm: "Are your sure?" }, class:"submit-button" %></p>
 <% end %>
 
 <h3>Discussion</h3>
