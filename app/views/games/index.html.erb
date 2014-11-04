@@ -2,7 +2,7 @@
 
 <ul>
   <% @games.each do |game| %>
-    <li><%= link_to game.name, location_game_path(game.location, game) %></li>
+    <li class="front-page"><%= link_to game.name, location_game_path(game.location, game) %></li>
   <% end %>
 </ul>
 
