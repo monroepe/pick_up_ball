@@ -8,7 +8,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @players = @game.players.includes(:user)
-    @comments = @game.comments.order("created_at")
+    @comments = @game.comments.order("created_at").includes(:user)
   end
 
   def new
