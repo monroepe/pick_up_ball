@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-    @games = current_user.games
+    @games = current_user.games.includes(:location)
   end
 
   def show
