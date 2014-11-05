@@ -130,3 +130,12 @@ h5, .front-page {
 ul {
   list-style-type: none;
 }
+
+.locations > a {
+  font-size: 1.4em;
+  margin-right: 5px;
+}
+
+.locations > a:hover {
+  color: white;
+}
