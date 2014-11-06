@@ -100,3 +100,167 @@ games = Game.create([
                         user_id: 1
                       }
                     ])
+
+User.create!([
+              {
+               email: 'test@test.com',
+               username: 'Tester',
+               password: 'password123'
+              },
+              {
+               email: 'palo@alto.com',
+               username: 'Palo Alto',
+               password: '123456789'
+              },
+              {
+               email: 'baller@test.com',
+               username: 'Baller',
+               password: '123456789'
+              },
+              {
+               email: 'bulls@test.com',
+               username: 'BullsFan',
+               password: '123456789'
+              },
+              {
+               email: 'kingjames@test.com',
+               username: 'King23James',
+               password: '123456789'
+              },
+              {
+               email: 'celtics@test.com',
+               username: 'BCeltics',
+               password: '123456789'
+              }
+            ])
+
+Player.create([
+                {
+                  user_id: 1,
+                  game_id: 11
+                },
+                {
+                  user_id: 1,
+                  game_id: 9
+                },
+                {
+                  user_id: 1,
+                  game_id: 6
+                },
+                {
+                  user_id: 1,
+                  game_id: 2
+                },
+                {
+                  user_id: 2,
+                  game_id: 6
+                },
+                {
+                  user_id: 2,
+                  game_id: 9
+                },
+                {
+                  user_id: 3,
+                  game_id: 9
+                },
+                {
+                  user_id: 3,
+                  game_id: 5
+                },
+                {
+                  user_id: 3,
+                  game_id: 7
+                },
+                {
+                  user_id: 4,
+                  game_id: 11
+                },
+                {
+                  user_id: 4,
+                  game_id: 12
+                },
+                {
+                  user_id: 4,
+                  game_id: 10
+                },
+                {
+                  user_id: 4,
+                  game_id: 1
+                },
+                {
+                  user_id: 4,
+                  game_id: 4
+                },
+                {
+                  user_id: 5,
+                  game_id: 12
+                },
+                {
+                  user_id: 5,
+                  game_id: 8
+                },
+                {
+                  user_id: 5,
+                  game_id: 3
+                },
+                {
+                  user_id: 6,
+                  game_id: 11
+                },
+                {
+                  user_id: 6,
+                  game_id: 8
+                },
+                {
+                  user_id: 6,
+                  game_id: 6
+                }
+              ])
+
+Comment.create([
+                 {
+                  user_id: 1,
+                  game_id: 11,
+                  body: "Gonna be good. Can't wait to ball."
+                  },
+                  {
+                  user_id: 4,
+                  game_id: 11,
+                  body: "I will be like 5 minutes late guys."
+                  },
+                  {
+                  user_id: 1,
+                  game_id: 9,
+                  body: "We need to get some more people for this game."
+                  },
+                  {
+                  user_id: 2,
+                  game_id: 9,
+                  body: "I will try to find some friends."
+                  },
+                  {
+                  user_id: 3,
+                  game_id: 9,
+                  body: "I am not sure I can make it, but I will try."
+                  },
+                  {
+                  user_id: 1,
+                  game_id: 6,
+                  body: "This should be a fun one."
+                  },
+                  {
+                  user_id: 2,
+                  game_id: 6,
+                  body: "Yeah I am excited to get out there and play with you guys."
+                  },
+                  {
+                  user_id: 6,
+                  game_id: 6,
+                  body: "We should do it again next week."
+                  },
+                  {
+                  user_id: 1,
+                  game_id: 2,
+                  body: "Come on let's make this a Saturday thing."
+                  }
+                ])
